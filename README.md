@@ -4,7 +4,10 @@
 
 ## Integrantes del equipo
 
-[Nombres, apellidos, y usuario GitHub de los integrantes del equipo.]
+ -Mario Torre Merino             mario.torre@alumnos.upm.es
+- Javier Sierra de Francisco     j.sdefrancisco@alumnos.upm.es
+- Guillermo Quero Ponce          guillermo.quero@alumnos.upm.es
+- Ávaro Velasco Muela            alvaro.vmuela@alumnos.upm.es
 
 ## Objetivos del trabajo
 
