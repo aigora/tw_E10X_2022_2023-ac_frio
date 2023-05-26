@@ -1,6 +1,6 @@
 # BASE DE DATOS
 
-[Descripción breve del proyecto a realizar (2-3 frases).]
+Base de datos es un programa que consiste en el analisis de un archivo .csv que contiene un registro de numeros datos sobre las diferentes generaciones de energia.
 
 ## Integrantes del equipo
 
@@ -11,4 +11,7 @@
 
 ## Objetivos del trabajo
 
-[Lista de los objetivos que se persiguen con el trabajo propuesto.]
+- Leer y guardar datos.
+- Utilizar datos guardados para realizar calculos.
+- Mostrar datos y resultados por pantalla.
+
