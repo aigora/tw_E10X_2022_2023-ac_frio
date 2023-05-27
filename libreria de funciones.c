@@ -180,22 +180,25 @@ void menu_secundario(int *seleccion)
  
 
 
-int comprobar_existencia_fichero()  //comprueba el fichero y guarda los datos en vectores
+int apertura_lectura_guardardatos(datos valores[], int n)  //comprueba el fichero, lee y guarda los datos en vectores
 {
     FILE *fOrigen, *fDestino;
+
     char c;
 
-  // Abre ficheros:
-  // El origen en modo lectura:
+    // Abre ficheros:
+    // El origen en modo lectura
     fOrigen = fopen("generacion_por_tecnologias_21_22.csv", "r");
+
     if (fOrigen == NULL)
     {
         printf("Error al abrir el archivo origen.\n");
         return -1;
     }
+
     else
     {
-    // El destino en modo escritura:
+        // El destino en modo escritura
         fDestino = fopen("generacion.txt", "w");
         if (fDestino == NULL)
         {
@@ -203,28 +206,27 @@ int comprobar_existencia_fichero()  //comprueba el fichero y guarda los datos en
             return -1;
         }
         else
-        { // Los dos ficheros están correctamente abiertos
-      // Leemos el origen caracter por caracter, parando al encontrar
-      // el EOF
+        {
+            // Leemos el origen caracter por caracter, parando al encontrar el EOF
             while (fscanf(fOrigen, "%c", &c) != EOF)
             {
-                if (c == '"')
+                if ((c == '/') || (c == '"'))
                 {
-                    c = ' '; // Cambiamos comillas por espacios
+                    c = ' ';    // Cambiamos barras y comillas por espacios
                 }
                 else if(c == ',')
                 {
-                    c = '.';
+                    c = '.';    // Cambiamos comas por puntos
                 }
+
                 fprintf(fDestino, "%c", c); // Escribimos el caracter en el destino
             }
-      // Cerramos ficheros
-      fclose(fOrigen);
-      fclose(fDestino);
-      printf("Copia finalizada con exito.\n");
-      
+            // Cerramos ficheros
+            fclose(fDestino);
+            fclose(fOrigen);
+            printf("Carga finalizada con exito.\n");
+        }
     }
-  }
  
  // INICIALIZACION DE LA 2º PARTE LEYENDO EL FICHERO MODIFICADO
 
