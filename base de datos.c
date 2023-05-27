@@ -6,11 +6,14 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <locale.h> 
 #include "libreria de funciones.h"
 
 
 int main()
 {
+    setlocale (LC_CTYPE,"spanish");
+	
     int opciones, info, seleccion;
 
     datos valores[25];
