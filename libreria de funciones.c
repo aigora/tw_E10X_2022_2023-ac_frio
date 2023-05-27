@@ -230,17 +230,13 @@ int apertura_lectura_guardardatos(datos valores[], int n)  //comprueba el ficher
  
  // INICIALIZACION DE LA 2º PARTE LEYENDO EL FICHERO MODIFICADO
 
-int i;
+	int i;
 
-    char linea1[200], linea2[200], linea3[200], linea4[200], linea5[200];
+	char fecha[25];
 
-    char hidraulica[50], turbinacion_bombeo[25], nuclear[25], carbon[25], fuel_Gas[25], motores_diesel[25], turbina_de_gas[25], turbina_de_vapor[25], ciclo_combinado[25], hidroeolica[25], eolica[25], solar_fotovoltaica[25], solar_termica[25], otras_renovables[25], cogeneracion[25], residuos_no_renovables[25], residuos_renovables[25], generacion_total[25];
+    char linea1[200], linea2[200], linea3[200], linea4[200];
 
-    double Hidraulica[30], Turbinacion_bombeo[25], Nuclear[25], Carbon[25], Fuel_Gas[25], Motores_diesel[25], Turbina_de_gas[25], Turbina_de_vapor[25], Ciclo_combinado[25], Hidroeolica[25], Eolica[25], Solar_fotovoltaica[25], Solar_termica[25], Otras_renovables[25], Cogeneracion[25], Residuos_no_renovables[25], Residuos_renovables[25], Generacion_total[25];
-
-    char Fecha[20];
-
-    int fecha[25];
+    char hidraulica[25], turbinacion_bombeo[25], nuclear[25], carbon[25], fuel_Gas[25], motores_diesel[25], turbina_de_gas[25], turbina_de_vapor[25], ciclo_combinado[25], hidroeolica[25], eolica[25], solar_fotovoltaica[25], solar_termica[25], otras_renovables[25], cogeneracion[25], residuos_no_renovables[25], residuos_renovables[25], generacion_total[25];
 
     FILE *pleer;
 
@@ -253,57 +249,184 @@ int i;
     }
     else
     {
-        fscanf(pleer, "%[^\n]\n", linea1);    //salto fila 1
+	fscanf(pleer, "%[^\n]\n", linea1);    //salto fila 1
         fscanf(pleer, "%[^\n]\n", linea2);    //salto fila 2
         fscanf(pleer, "%[^\n]\n", linea3);    //salto fila 3
         fscanf(pleer, "%[^\n]\n", linea4);    //salto fila 4
-        fscanf(pleer, "%[^\n]\n", linea5);    //salto fila 5  fechas
 
         //fscanf(pleer, "%[^.].%i.%i.%i.%i.%i.%i.%i.%i.%i.%i.%i.%i.%i.%i.%i.%i.%i.%i.%i.%i.%i.%i.%i.%i\n", Fecha, &fecha[0],&fecha[1],&fecha[2],&fecha[3],&fecha[4],&fecha[5],&fecha[6],&fecha[7],&fecha[8],&fecha[9],&fecha[10],&fecha[11],&fecha[12],&fecha[13],&fecha[14],&fecha[15],&fecha[16],&fecha[17],&fecha[18],&fecha[19],&fecha[20],&fecha[21],&fecha[22],&fecha[23],&fecha[25],&fecha[25]);
 
-        fscanf(pleer, "%[^.]. %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf \n", hidraulica, &Hidraulica[1], &Hidraulica[2],&Hidraulica[3],&Hidraulica[4],&Hidraulica[5],&Hidraulica[6],&Hidraulica[7],&Hidraulica[8],&Hidraulica[9],&Hidraulica[10],&Hidraulica[11],&Hidraulica[12],&Hidraulica[13],&Hidraulica[14],&Hidraulica[15],&Hidraulica[16],&Hidraulica[17],&Hidraulica[18],&Hidraulica[19],&Hidraulica[20],&Hidraulica[21],&Hidraulica[22],&Hidraulica[23],&Hidraulica[24],&Hidraulica[25]);
+        //fscanf(pleer, "%[^.]. %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf \n", hidraulica, &Hidraulica[1], &Hidraulica[2],&Hidraulica[3],&Hidraulica[4],&Hidraulica[5],&Hidraulica[6],&Hidraulica[7],&Hidraulica[8],&Hidraulica[9],&Hidraulica[10],&Hidraulica[11],&Hidraulica[12],&Hidraulica[13],&Hidraulica[14],&Hidraulica[15],&Hidraulica[16],&Hidraulica[17],&Hidraulica[18],&Hidraulica[19],&Hidraulica[20],&Hidraulica[21],&Hidraulica[22],&Hidraulica[23],&Hidraulica[24],&Hidraulica[25]);
 
-        fscanf(pleer, "%[^.]. %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf \n", turbinacion_bombeo, &Turbinacion_bombeo[1], &Turbinacion_bombeo[2],&Turbinacion_bombeo[3],&Turbinacion_bombeo[4],&Turbinacion_bombeo[5],&Turbinacion_bombeo[6],&Turbinacion_bombeo[7],&Turbinacion_bombeo[8],&Turbinacion_bombeo[9],&Turbinacion_bombeo[10],&Turbinacion_bombeo[11],&Turbinacion_bombeo[12],&Turbinacion_bombeo[13],&Turbinacion_bombeo[14],&Turbinacion_bombeo[15],&Turbinacion_bombeo[16],&Turbinacion_bombeo[17],&Turbinacion_bombeo[18],&Turbinacion_bombeo[19],&Turbinacion_bombeo[20],&Turbinacion_bombeo[21],&Turbinacion_bombeo[22],&Turbinacion_bombeo[23],&Turbinacion_bombeo[24],&Turbinacion_bombeo[25]);
+		fscanf(pleer, "%[^.].", fecha);
 
-        fscanf(pleer, "%[^.]. %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf . %lf \n", nuclear, &Nuclear[1], &Nuclear[2],&Nuclear[3],&Nuclear[4],&Nuclear[5],&Nuclear[6],&Nuclear[7],&Nuclear[8],&Nuclear[9],&Nuclear[10],&Nuclear[11],&Nuclear[12],&Nuclear[13],&Nuclear[14],&Nuclear[15],&Nuclear[16],&Nuclear[17],&Nuclear[18],&Nuclear[19],&Nuclear[20],&Nuclear[21],&Nuclear[22],&Nuclear[23],&Nuclear[24],&Nuclear[25]);
-  
-        printf("%s\n", linea1);
-        printf("%s\n", linea2);
-        printf("%s\n", linea3);
-        printf("%s\n", linea4);
-        printf("%s\n", linea5);
+		for(i = 0; i < 9; i++)
+		{
+			fscanf(pleer,"0%i %i.", &valores[i].mes, &valores[i].ano);
+		}
+		fscanf(pleer,"%i %i.%i %i.%i %i.", &valores[9].mes, &valores[9].ano, &valores[10].mes, &valores[10].ano, &valores[11].mes, &valores[11].ano);
+
+		for(i = 12; i < 21; i++)
+		{
+			fscanf(pleer,"0%i %i.", &valores[i].mes, &valores[i].ano);
+		}
+		fscanf(pleer,"%i %i.%i %i.%i %i\n", &valores[21].mes, &valores[21].ano, &valores[22].mes, &valores[22].ano, &valores[23].mes, &valores[23].ano);
 
 
-        printf("\n");
+		fscanf(pleer, "%[^.]", hidraulica);
 
-        printf("%s \n", hidraulica);
+		for(i = 0; i < 24; i++)
+		{
+			fscanf(pleer,". %lf ", &valores[i].Hidraulica);
+		}
 
-        for(i=1;i<25;i++)
-        {
-            printf("%lf ", Hidraulica[i]);
-        }
 
-        printf("\n\n");
+		fscanf(pleer, "%[^.]", turbinacion_bombeo);
 
-        printf("%s \n", turbinacion_bombeo);
-        for(i=1;i<25;i++)
-        {
-            printf("%lf ", Turbinacion_bombeo[i]);
-        }
+		for(i = 0; i < 24; i++)
+		{
+			fscanf(pleer,". %lf ", &valores[i].Turbinacion_bombeo);
+		}
 
-        printf("\n\n");
 
-        printf("%s \n", nuclear);
-        for(i=1;i<25;i++)
-        {
-            printf("%lf ", Nuclear[i]);
-        }
+		fscanf(pleer, "%[^.]", nuclear);
 
-        printf("\n\n");
-     
-     fclose(pleer);
- 
- 
+		for(i = 0; i < 24; i++)
+		{
+			fscanf(pleer,". %lf ", &valores[i].Nuclear);
+		}
+
+
+		fscanf(pleer, "%[^.]", carbon);
+
+		for(i = 0; i < 24; i++)
+		{
+			fscanf(pleer,". %lf ", &valores[i].Carbon);
+		}
+
+
+		fscanf(pleer, "%[^.]", fuel_Gas);
+
+		for(i = 0; i < 6; i++)
+		{
+			fscanf(pleer,". %c ", &valores[i].Fuel_gasc);
+		}
+
+		fscanf(pleer,". %lf ", &valores[6].Fuel_gas);
+
+		for(i = 7; i < 24; i++)
+		{
+			fscanf(pleer,". %c ", &valores[i].Fuel_gasc);
+		}
+
+
+		fscanf(pleer, "%[^.]", motores_diesel);
+
+		for(i = 0; i < 24; i++)
+		{
+			fscanf(pleer,". %lf ", &valores[i].Motores_diesel);
+		}
+
+
+		fscanf(pleer, "%[^.]", turbina_de_gas);
+
+		for(i = 0; i < 24; i++)
+		{
+			fscanf(pleer,". %lf ", &valores[i].Turbina_gas);
+		}
+
+
+		fscanf(pleer, "%[^.]", turbina_de_vapor);
+
+		for(i = 0; i < 24; i++)
+		{
+			fscanf(pleer,". %lf ", &valores[i].Turbina_vapor);
+		}
+
+
+		fscanf(pleer, "%[^.]", ciclo_combinado);
+
+		for(i = 0; i < 24; i++)
+		{
+			fscanf(pleer,". %lf ", &valores[i].Ciclo_combinado);
+		}
+
+
+		fscanf(pleer, "%[^.]", hidroeolica);
+
+		for(i = 0; i < 24; i++)
+		{
+			fscanf(pleer,". %lf ", &valores[i].Hidroeolica);
+		}
+
+
+		fscanf(pleer, "%[^.]", eolica);
+
+		for(i = 0; i < 24; i++)
+		{
+			fscanf(pleer,". %lf ", &valores[i].Eolica);
+		}
+
+
+		fscanf(pleer, "%[^.]", solar_fotovoltaica);
+
+		for(i = 0; i < 24; i++)
+		{
+			fscanf(pleer,". %lf ", &valores[i].Solar_fotovoltaica);
+		}
+
+
+		fscanf(pleer, "%[^.]", solar_termica);
+
+		for(i = 0; i < 24; i++)
+		{
+			fscanf(pleer,". %lf ", &valores[i].Solar_termica);
+		}
+
+
+		fscanf(pleer, "%[^.]", otras_renovables);
+
+		for(i = 0; i < 24; i++)
+		{
+			fscanf(pleer,". %lf ", &valores[i].Otras_renovables);
+		}
+
+
+		fscanf(pleer, "%[^.]", cogeneracion);
+
+		for(i = 0; i < 24; i++)
+		{
+			fscanf(pleer,". %lf ", &valores[i].Cogeneracion);
+		}
+
+
+		fscanf(pleer, "%[^.]", residuos_no_renovables);
+
+		for(i = 0; i < 24; i++)
+		{
+			fscanf(pleer,". %lf ", &valores[i].Residuos_no_renovables);
+		}
+
+
+		fscanf(pleer, "%[^.]", residuos_renovables);
+
+		for(i = 0; i < 24; i++)
+		{
+			fscanf(pleer,". %lf ", &valores[i].Residuos_renovables);
+		}
+
+
+		fscanf(pleer, "%[^.]", generacion_total);
+
+		for(i = 0; i < 24; i++)
+		{
+			fscanf(pleer,". %lf ", &valores[i].Generacion_total);
+		}
+
+
+        fclose(pleer);
+        return 0;
+	}
 }
 
  
