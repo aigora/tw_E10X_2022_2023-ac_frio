@@ -1629,6 +1629,229 @@ void diversos_calculos(datos valores[], int n)
     printf("El minimo producido de residuos en 2 años ocurre en %i %i es: %lf\n\n", mesmin_residuos, anomin_residuos, min_residuos);
 */
 
+ do
+    {
+        printf("\nElige sobre que energia realizar los calculos\n");
+
+        printf("1-Hidraulica\t\t     2-Turbinacion bombeo\n");
+
+        printf("3-Nuclear\t\t     4-Carbon\n");
+
+        printf("5-Fuel gas\t\t     6-Motores diesel\n");
+
+        printf("7-Turbina gas\t\t     8-Turbina vapor\n");
+
+        printf("9-Ciclo combinado\t     10-Hidroeolica\n");
+
+        printf("11-Eolica\t\t     12-Solar fotovoltaica\n");
+
+        printf("13-Solar termica\t     14-Otras renovables\n");
+
+        printf("15-Cogeneracion\t\t     16-Residuos no renovables\n");
+
+        printf("17-Residuos renovables\t     18-Energias renovables\n");
+
+        printf("19-Energia no renovables     20-Mezcla\n");
+
+        printf("21-Residuos\t\t     22-Generacion total\n");
+
+        printf("23-Salir\n\n");
+
+        scanf("%i", &chose);
+
+        printf("\n");
+
+		system("cls");
+
+        switch(chose)
+        {
+            case 1:
+                 printf("El total producido de hidraulica en 2 años es: %lf GWh\n", sumatorio_hidraulica);
+   				 printf("La media mensual producida de hidraulica en 2 años es: %lf GWh\n", sumatorio_hidraulica/24);
+ 				 printf("La media anual producida de hidraulica en 2 años es: %lf GWh\n", sumatorio_hidraulica/2);
+  				 printf("El maximo producido de hidraulica en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_hidraulica, anomax_hidraulica, max_hidraulica);
+				 printf("El minimo producido de hidraulica en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_hidraulica, anomin_hidraulica, min_hidraulica);
+                break;
+
+            case 2:
+                printf("El total producido de turbinacion bombeo en 2 años es: %lf GWh\n", sumatorio_turbinacion_bombeo);
+  				printf("La media mensual producida de turbinacion bombeo en 2 años es: %lf GWh\n", sumatorio_turbinacion_bombeo/24);
+   				printf("La media anual producida de turbinacion bombeo en 2 años es: %lf GWh\n", sumatorio_turbinacion_bombeo/2);
+  			    printf("El maximo producido de turbinacion bombeo en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_turbinacion_bombeo, anomax_turbinacion_bombeo, max_turbinacion_bombeo);
+    			printf("El minimo producido de turbinacion bombeo en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_turbinacion_bombeo, anomin_turbinacion_bombeo, min_turbinacion_bombeo);
+	            break;
+
+            case 3:
+                printf("El total producido de nuclear en 2 años es: %lf GWh\n", sumatorio_nuclear);
+   			    printf("La media mensual producida de nuclear en 2 años es: %lf GWh\n", sumatorio_nuclear/24);
+   			    printf("La media anual producida de nuclear en 2 años es: %lf GWh\n", sumatorio_nuclear/2);
+   			    printf("El maximo producido de nuclear en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_nuclear, anomax_nuclear, max_nuclear);
+  			    printf("El minimo producido de nuclear en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_nuclear, anomin_nuclear, min_nuclear);
+                break;
+            case 4:
+                printf("El total producido de carbon en 2 años es: %lf GWh\n", sumatorio_carbon);
+  			    printf("La media mensual producida de carbon en 2 años es: %lf GWh\n", sumatorio_carbon/24);
+  			    printf("La media anual producida de carbon en 2 años es: %lf GWh\n", sumatorio_carbon/2);
+  			    printf("El maximo producido de carbon en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_carbon, anomax_carbon, max_carbon);
+ 			    printf("El minimo producido de carbon en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_carbon, anomin_carbon, min_carbon);
+                break;
+
+            case 5:
+                printf("El total producido de fuel Gas en 2 años es: %lf GWh\n", sumatorio_fuel_Gas);
+    			printf("La media mensual producida de fuel Gas en 2 años es: %lf GWh\n", sumatorio_fuel_Gas/24);
+  			 	printf("La media anual producida de fuel Gas en 2 años es: %lf GWh\n", sumatorio_fuel_Gas/2);
+    			printf("El maximo producido de fuel Gas en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_fuel_Gas, anomax_fuel_Gas, max_fuel_Gas);
+    			printf("El minimo producido de fuel Gas en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_fuel_Gas, anomin_fuel_Gas, min_fuel_Gas);
+                break;
+
+            case 6:
+                printf("El total producido de motores diesel en 2 años es: %lf GWh\n", sumatorio_motores_diesel);
+    			printf("La media mensual producida de motores diesel en 2 años es: %lf GWh\n", sumatorio_motores_diesel/24);
+    			printf("La media anual producida de motores diesel en 2 años es: %lf GWh\n", sumatorio_motores_diesel/2);
+    			printf("El maximo producido de motores diesel en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_motores_diesel, anomax_motores_diesel, max_motores_diesel);
+    			printf("El minimo producido de motores diesel en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_motores_diesel, anomin_motores_diesel, min_motores_diesel);
+                break;
+
+            case 7:
+                printf("El total producido de turbina de gas en 2 años es: %lf GWh\n", sumatorio_turbina_de_gas);
+    			printf("La media mensual producida de turbina de gas en 2 años es: %lf GWh\n", sumatorio_turbina_de_gas/24);
+    			printf("La media anual producida de turbina de gas en 2 años es: %lf GWh\n", sumatorio_turbina_de_gas/2);
+    			printf("El maximo producido de turbina de gas en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_turbina_de_gas, anomax_turbina_de_gas, max_turbina_de_gas);
+    			printf("El minimo producido de turbina de gas en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_turbina_de_gas, anomin_turbina_de_gas, min_turbina_de_gas);
+                break;
+
+            case 8:
+                printf("El total producido de turbina de vapor en 2 años es: %lf GWh\n", sumatorio_turbina_de_vapor);
+    			printf("La media mensual producida de turbina de vapor en 2 años es: %lf GWh\n", sumatorio_turbina_de_vapor/24);
+    			printf("La media anual producida de turbina de vapor en 2 años es: %lf GWh\n", sumatorio_turbina_de_vapor/2);
+    			printf("El maximo producido de turbina de vapor en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_turbina_de_vapor, anomax_turbina_de_vapor, max_turbina_de_vapor);
+    			printf("El minimo producido de turbina de vapor en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_turbina_de_vapor, anomin_turbina_de_vapor, min_turbina_de_vapor);
+                break;
+
+            case 9:
+                printf("El total producido de ciclo combinado en 2 años es: %lf GWh\n", sumatorio_ciclo_combinado);
+    			printf("La media mensual producida de ciclo combinado en 2 años es: %lf GWh\n", sumatorio_ciclo_combinado/24);
+    			printf("La media anual producida de ciclo combinado en 2 años es: %lf GWh\n", sumatorio_ciclo_combinado/2);
+    			printf("El maximo producido de ciclo combinado en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_ciclo_combinado, anomax_ciclo_combinado, max_ciclo_combinado);
+    			printf("El minimo producido de ciclo combinado en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_ciclo_combinado, anomin_ciclo_combinado, min_ciclo_combinado);
+                break;
+
+            case 10:
+                printf("El total producido de hidroeolica en 2 años es: %lf GWh\n", sumatorio_hidroeolica);
+    			printf("La media mensual producida de hidroeolica en 2 años es: %lf GWh\n", sumatorio_hidroeolica/24);
+    			printf("La media anual producida de hidroeolica en 2 años es: %lf GWh\n", sumatorio_hidroeolica/2);
+    			printf("El maximo producido de hidroeolica en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_hidroeolica, anomax_hidroeolica, max_hidroeolica);
+    			printf("El minimo producido de hidroeolica en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_hidroeolica, anomin_hidroeolica, min_hidroeolica);
+                break;
+
+            case 11:
+                printf("El total producido de eolica en 2 años es: %lf GWh\n", sumatorio_eolica);
+    			printf("La media mensual producida de eolica en 2 años es: %lf GWh\n", sumatorio_eolica/24);
+    			printf("La media anual producida de eolica en 2 años es: %lf GWh\n", sumatorio_eolica/2);
+    			printf("El maximo producido de eolica en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_eolica, anomax_eolica, max_eolica);
+    			printf("El minimo producido de eolica en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_eolica, anomin_eolica, min_eolica);
+                break;
+
+            case 12:
+                printf("El total producido de solar fotovoltaica en 2 años es: %lf GWh\n", sumatorio_solar_fotovoltaica);
+    			printf("La media mensual producida de solar fotovoltaica en 2 años es: %lf GWh\n", sumatorio_solar_fotovoltaica/24);
+    			printf("La media anual producida de solar fotovoltaica en 2 años es: %lf GWh\n", sumatorio_solar_fotovoltaica/2);
+   				printf("El maximo producido de solar fotovoltaica en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_solar_fotovoltaica, anomax_solar_fotovoltaica, max_solar_fotovoltaica);
+    			printf("El minimo producido de solar fotovoltaica en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_solar_fotovoltaica, anomin_solar_fotovoltaica, min_solar_fotovoltaica);
+                break;
+
+            case 13:
+                printf("El total producido de solar termica en 2 años es: %lf\n", sumatorio_solar_termica);
+    			printf("La media mensual producida de solar termica en 2 años es: %lf\n", sumatorio_solar_termica/24);
+    			printf("La media anual producida de solar termica en 2 años es: %lf\n", sumatorio_solar_termica/2);
+    			printf("El maximo producido de solar termica en 2 años ocurre el mes %i de %i con: %lf\n", mesmax_solar_termica, anomax_solar_termica, max_solar_termica);
+    			printf("El minimo producido de solar termica en 2 años ocurre el mes %i de %i con: %lf\n\n", mesmin_solar_termica, anomin_solar_termica, min_solar_termica);
+                break;
+
+            case 14:
+                printf("El total producido de otras renovables en 2 años es: %lf GWh\n", sumatorio_otras_renovables);
+    			printf("La media mensual producida de otras renovables en 2 años es: %lf GWh\n", sumatorio_otras_renovables/24);
+    			printf("La media anual producida de otras renovables en 2 años es: %lf GWh\n", sumatorio_otras_renovables/2);
+    			printf("El maximo producido de otras renovables en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_otras_renovables, anomax_otras_renovables, max_otras_renovables);
+    			printf("El minimo producido de otras renovables en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_otras_renovables, anomin_otras_renovables, min_otras_renovables);
+                break;
+
+            case 15:
+                printf("El total producido de cogeneracion en 2 años es: %lf GWh\n", sumatorio_cogeneracion);
+    			printf("La media mensual producida de cogeneracion en 2 años es: %lf GWh\n", sumatorio_cogeneracion/24);
+    			printf("La media anual producida de cogeneracion en 2 años es: %lf GWh\n", sumatorio_cogeneracion/2);
+    			printf("El maximo producido de cogeneracion en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_cogeneracion, anomax_cogeneracion, max_cogeneracion);
+    			printf("El minimo producido de cogeneracion en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_cogeneracion, anomin_cogeneracion, min_cogeneracion);
+                break;
+
+            case 16:
+                printf("El total producido de residuos no renovables en 2 años es: %lf GWh\n", sumatorio_residuos_no_renovables);
+    			printf("La media mensual producida de residuos no renovables en 2 años es: %lf GWh\n", sumatorio_residuos_no_renovables/24);
+    			printf("La media anual producida de residuos no renovables en 2 años es: %lf GWh\n", sumatorio_residuos_no_renovables/2);
+    			printf("El maximo producido de residuos no renovables en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_residuos_no_renovables, anomax_residuos_no_renovables, max_residuos_no_renovables);
+    			printf("El minimo producido de residuos no renovables en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_residuos_no_renovables, anomin_residuos_no_renovables, min_residuos_no_renovables);
+                break;
+
+            case 17:
+                printf("El total producido de residuos renovables en 2 años es: %lf GWh\n", sumatorio_residuos_renovables);
+    			printf("La media mensual producida de residuos renovables en 2 años es: %lf GWh\n", sumatorio_residuos_renovables/24);
+    			printf("La media anual producida de residuos renovables en 2 años es: %lf GWh\n", sumatorio_residuos_renovables/2);
+    			printf("El maximo producido de residuos renovables en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_residuos_renovables, anomax_residuos_renovables, max_residuos_renovables);
+    			printf("El minimo producido de residuos renovables en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_residuos_renovables, anomin_residuos_renovables, min_residuos_renovables);
+                break;
+
+
+            case 18:
+                printf("El total producido de renovable en 2 años es: %lf GWh\n", sumatorio_renovable);
+    			printf("La media mensual producida de renovable en 2 años es: %lf GWh\n", sumatorio_renovable/24);
+    			printf("La media anual producida de renovable en 2 años es: %lf GWh\n", sumatorio_renovable/2);
+    			printf("El maximo producido de renovable en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_renovable, anomax_renovable, max_renovable);
+   				printf("El minimo producido de renovable en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_renovable, anomin_renovable, min_renovable);
+                break;
+
+			case 19:
+                printf("El total producido de no renovable en 2 años es: %lf GWh\n", sumatorio_no_renovable);
+    			printf("La media mensual producida de no renovable en 2 años es: %lf GWh\n", sumatorio_no_renovable/24);
+    			printf("La media anual producida de no renovable en 2 años es: %lf GWh\n", sumatorio_no_renovable/2);
+    			printf("El maximo producido de no renovable en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_no_renovable, anomax_no_renovable, max_no_renovable);
+    			printf("El minimo producido de no renovable en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_no_renovable, anomin_no_renovable, min_no_renovable);
+                break;
+
+            case 20:
+                printf("El total producido de mezcla en 2 años es: %lf GWh\n", sumatorio_mezcla);
+    			printf("La media mensual producida de mezcla en 2 años es: %lf GWh\n", sumatorio_mezcla/24);
+    			printf("La media anual producida de mezcla en 2 años es: %lf GWh\n", sumatorio_mezcla/2);
+    			printf("El maximo producido de mezcla en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_mezcla, anomax_mezcla, max_mezcla);
+    			printf("El minimo producido de mezcla en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_mezcla, anomin_mezcla, min_mezcla);
+                break;
+
+            case 21:
+                printf("El total producido de residuos en 2 años es: %lf GWh\n", sumatorio_residuos);
+    			printf("La media mensual producida de residuos en 2 años es: %lf GWh\n", sumatorio_residuos/24);
+    			printf("La media anual producida de residuos en 2 años es: %lf GWh\n", sumatorio_residuos/2);
+    			printf("El maximo producido de residuos en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_residuos, anomax_residuos, max_residuos);
+    			printf("El minimo producido de residuos en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_residuos, anomin_residuos, min_residuos);
+                break;
+
+            case 22:
+                printf("El total producido de Generacion total en 2 años es: %lf GWh\n", sumatorio_generacion_total);
+                printf("La media mensual producida de Generacion total en 2 años es: %lf GWh\n", sumatorio_generacion_total/24);
+                printf("La media anual producida de Generacion total en 2 años es: %lf GWh\n", sumatorio_generacion_total/2);
+                printf("El maximo producido de residuos en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_generacion_total, anomax_generacion_total, max_generacion_total);
+    			printf("El minimo producido de residuos en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_generacion_total, anomin_generacion_total, min_generacion_total);
+                break;
+
+            case 23:
+                printf("Saliendo\n");
+                break;
+
+            default:
+                printf("Opcion no disponible\n");
+                break;
+        }
+    }
+    while(chose != 23);
+}
 	
  
 
