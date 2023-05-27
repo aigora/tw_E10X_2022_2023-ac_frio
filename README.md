@@ -12,6 +12,6 @@ Base de datos es un programa que consiste en el analisis de un archivo .csv que 
 ## Objetivos del trabajo
 
 - Leer y guardar datos.
-- Utilizar datos guardados para realizar calculos.
+- Utilizar datos guardados para realizar calculos estadísticos.
 - Mostrar datos y resultados por pantalla.
 
