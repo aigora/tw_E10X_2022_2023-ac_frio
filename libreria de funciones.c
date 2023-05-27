@@ -1952,6 +1952,93 @@ void cargar_resultados(datos valores[], int n)
 
         printf("\n\n");
 
- 
+        printf("Ciclo combinado\n");
 
+        for(i = 0; i < 24; i++)
+        {
+            printf("%lf ", valores[i].Ciclo_combinado);
+        }
+
+        printf("\n\n");
+
+        printf("Hidroeolica\n");
+
+        for(i = 0; i < 24; i++)
+        {
+            printf("%lf ", valores[i].Hidroeolica);
+        }
+
+        printf("\n\n");
+
+        printf("Eolica\n");
+
+        for(i = 0; i < 24; i++)
+        {
+            printf("%lf ", valores[i].Eolica);
+        }
+
+        printf("\n\n");
+
+        printf("Solar fotovoltaica\n");
+
+        for(i = 0; i < 24; i++)
+        {
+            printf("%lf ", valores[i].Solar_fotovoltaica);
+        }
+
+        printf("\n\n");
+
+        printf("Solar termica\n");
+
+        for(i = 0; i < 24; i++)
+        {
+            printf("%lf ", valores[i].Solar_termica);
+        }
+
+        printf("\n\n");
+
+        printf("Otras renovables\n");
+
+        for(i = 0; i < 24; i++)
+        {
+            printf("%lf ", valores[i].Otras_renovables);
+        }
+
+        printf("\n\n");
+
+        printf("Cogeneracion\n");
+
+        for(i = 0; i < 24; i++)
+        {
+            printf("%lf ", valores[i].Cogeneracion);
+        }
+
+        printf("\n\n");
+
+        printf("Residuos no renovables\n");
+
+        for(i = 0; i < 24; i++)
+        {
+            printf("%lf ", valores[i].Residuos_no_renovables);
+        }
+
+        printf("\n\n");
+
+        printf("Residuos renovables\n");
+
+        for(i = 0; i < 24; i++)
+        {
+            printf("%lf ", valores[i].Residuos_renovables);
+        }
+
+        printf("\n\n");
+
+        printf("Generacion total\n");
+
+        for(i = 0; i < 24; i++)
+        {
+            printf("%lf ", valores[i].Generacion_total);
+        }
+
+        printf("\n\n");
 }
