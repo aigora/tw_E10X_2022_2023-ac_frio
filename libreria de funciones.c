@@ -36,91 +36,49 @@ void menu_principal(int *opcion)  // Función menu principal con system cls
 
 void informacion(int *info)
 {
-    printf("\nIFORMACION SOBRE EL PROGRAMA DE ANALISIS DE BASES DE DATOS\n");
+	printf("INFORMACION SOBRE EL PROGRAMA DE ANALISIS DE BASES DE DATOS\n");
 
- 
+	printf("Este programa sirve para realizar una serie de operaciones como calculo,\n busqueda y carga de datos a partir de un archivo de texto de datos\n");
 
-    printf("Este programa se dedica a realizar una serie de operaciones como calculo de datos, busqueda, orenacion, etc, a partir de uno (o mas) archivos de texto de datos\n");
+	do
+	{
+		printf("\n");
 
- 
+		printf("Diversos calculos       1\n");
+		printf("Busqueda de datos       2\n");
+		printf("Carga resultados        3\n");
+		printf("Salir                   4\n");
 
-    do
-    {
         printf("\n");
 
- 
+		scanf("%i", &*info);
 
-        printf("diversos calculos       1\n");
-        printf("carga de nuevos datos   2\n");
-        printf("guardar resultados      3\n");
-        printf("busqueda de datos       4\n");
-        printf("ordenar resultados      5\n");
-        printf("salir                   6\n");
+		system("cls");
 
- 
-
-        //fflush(stdin);
-
- 
-
-        scanf("%i", &*info);
-
- 
-
-        switch (*info)
-        {
+		switch (*info)
+		{
             case 1:
-                printf("realiza diferentes calculos estadisticos\n");
+                printf("\nRealiza diferentes calculos tales como el maximo, minimo y medias\n");
                 break;
-
- 
 
             case 2:
-                printf("añade nuevos datos\n");
+                printf("\nBusca datos especificos, esto es, buscar un dato en concreto a traves de una fecha\n");
                 break;
-
- 
 
             case 3:
-                printf("guarda nuevos resultados\n");
+                printf("\nMuestra por pantalla los datos del archivo\n");
                 break;
-
- 
 
             case 4:
-                printf("busca datos especificos\n");
+                printf("\nSaliendo\n");
                 break;
-
- 
-
-            case 5:
-                printf("ordena resultados en orden ascendente\n");
-                break;
-
- 
-
-            case 6:
-                printf("saliendo\n");
-                break;
-
- 
 
             default:
-               printf("opcion no disponible\n");
+               printf("\nOpcion no disponible\n");
                break;
-        }
-    }
-
- 
-
-    while(*info != 6);
-
- 
-
-    //system("PAUSE");
-
- 
-
+		}
+	}
+	while(*info != 4);
 }
 
  
