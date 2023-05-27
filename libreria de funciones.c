@@ -1173,6 +1173,462 @@ void diversos_calculos(datos valores[], int n)
     printf("El minimo producido de otras_renovables en 2 años ocurre en %i %i es: %lf\n\n", mesmin_otras_renovables, anomin_otras_renovables, min_otras_renovables);
 */
 
+
+    double sumatorio_cogeneracion = 0, max_cogeneracion = valores[0].Cogeneracion, min_cogeneracion = valores[0].Cogeneracion;
+	int mesmax_cogeneracion = 0, anomax_cogeneracion = 0, mesmin_cogeneracion = 0, anomin_cogeneracion = 0;
+    for(i = 0; i < n; i++)
+    {
+        sumatorio_cogeneracion += valores[i].Cogeneracion;
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(max_cogeneracion <= valores[i].Cogeneracion)
+        {
+            max_cogeneracion = valores[i].Cogeneracion;
+            mesmax_cogeneracion = i+1;
+        }
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(min_cogeneracion >= valores[i].Cogeneracion)
+        {
+            min_cogeneracion = valores[i].Cogeneracion;
+            mesmin_cogeneracion = i+1;
+        }
+    }
+
+	if(mesmax_cogeneracion <=  12)
+    {
+    	anomax_cogeneracion = 2021;
+	}
+	if((mesmax_cogeneracion > 12) && (mesmax_cogeneracion <= 24))
+	{
+		mesmax_cogeneracion = mesmax_cogeneracion - 12;
+		anomax_cogeneracion = 2022;
+	}
+
+	if(mesmin_cogeneracion <=  12)
+    {
+    	anomin_cogeneracion = 2021;
+	}
+	if((mesmin_cogeneracion > 12) && (mesmin_cogeneracion <= 24))
+	{
+		mesmin_cogeneracion = mesmin_cogeneracion - 12;
+		anomin_cogeneracion = 2022;
+	}
+/*
+    printf("El total producido de cogeneracion en 2 años es: %lf\n", sumatorio_cogeneracion);
+    printf("La media mensual producida de cogeneracion en 2 años es: %lf\n", sumatorio_cogeneracion/24);
+    printf("La media anual producida de cogeneracion en 2 años es: %lf\n", sumatorio_cogeneracion/2);
+    printf("El maximo producido de cogeneracion en 2 años ocurre en %i %i es: %lf\n", mesmax_cogeneracion, anomax_cogeneracion, max_cogeneracion);
+    printf("El minimo producido de cogeneracion en 2 años ocurre en %i %i es: %lf\n\n", mesmin_cogeneracion, anomin_cogeneracion, min_cogeneracion);
+*/
+
+    double sumatorio_residuos_no_renovables = 0, max_residuos_no_renovables = valores[0].Residuos_no_renovables, min_residuos_no_renovables = valores[0].Residuos_no_renovables;
+	int mesmax_residuos_no_renovables = 0, anomax_residuos_no_renovables = 0, mesmin_residuos_no_renovables = 0, anomin_residuos_no_renovables = 0;
+
+    for(i = 0; i < n; i++)
+    {
+        sumatorio_residuos_no_renovables += valores[i].Residuos_no_renovables;
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(max_residuos_no_renovables <= valores[i].Residuos_no_renovables)
+        {
+            max_residuos_no_renovables = valores[i].Residuos_no_renovables;
+            mesmax_residuos_no_renovables = i+1;
+        }
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(min_residuos_no_renovables >= valores[i].Residuos_no_renovables)
+        {
+            min_residuos_no_renovables = valores[i].Residuos_no_renovables;
+            mesmin_residuos_no_renovables = i+1;
+        }
+    }
+
+	if(mesmax_residuos_no_renovables <=  12)
+    {
+    	anomax_residuos_no_renovables = 2021;
+	}
+	if((mesmax_residuos_no_renovables > 12) && (mesmax_residuos_no_renovables <= 24))
+	{
+		mesmax_residuos_no_renovables = mesmax_residuos_no_renovables - 12;
+		anomax_residuos_no_renovables = 2022;
+	}
+
+	if(mesmin_residuos_no_renovables <=  12)
+    {
+    	anomin_residuos_no_renovables = 2021;
+	}
+	if((mesmin_residuos_no_renovables > 12) && (mesmin_residuos_no_renovables <= 24))
+	{
+		mesmin_residuos_no_renovables = mesmin_residuos_no_renovables - 12;
+		anomin_residuos_no_renovables = 2022;
+	}
+/*
+    printf("El total producido de residuos_no_renovables en 2 años es: %lf\n", sumatorio_residuos_no_renovables);
+    printf("La media mensual producida de residuos_no_renovables en 2 años es: %lf\n", sumatorio_residuos_no_renovables/24);
+    printf("La media anual producida de residuos_no_renovables en 2 años es: %lf\n", sumatorio_residuos_no_renovables/2);
+    printf("El maximo producido de residuos_no_renovables en 2 años ocurre en %i %i es: %lf\n", mesmax_residuos_no_renovables, anomax_residuos_no_renovables, max_residuos_no_renovables);
+    printf("El minimo producido de residuos_no_renovables en 2 años ocurre en %i %i es: %lf\n\n", mesmin_residuos_no_renovables, anomin_residuos_no_renovables, min_residuos_no_renovables);
+*/
+
+    double sumatorio_residuos_renovables = 0, max_residuos_renovables = valores[0].Residuos_renovables, min_residuos_renovables = valores[0].Residuos_renovables;
+	int mesmax_residuos_renovables = 0, anomax_residuos_renovables = 0, mesmin_residuos_renovables = 0, anomin_residuos_renovables = 0;
+
+    for(i = 0; i < n; i++)
+    {
+        sumatorio_residuos_renovables += valores[i].Residuos_renovables;
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(max_residuos_renovables <= valores[i].Residuos_renovables)
+        {
+            max_residuos_renovables = valores[i].Residuos_renovables;
+            mesmax_residuos_renovables = i+1;
+        }
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(min_residuos_renovables >= valores[i].Residuos_renovables)
+        {
+            min_residuos_renovables = valores[i].Residuos_renovables;
+            mesmin_residuos_renovables = i+1;
+        }
+    }
+
+    if(mesmax_residuos_renovables <=  12)
+    {
+    	anomax_residuos_renovables = 2021;
+	}
+	if((mesmax_residuos_renovables > 12) && (mesmax_residuos_renovables <= 24))
+	{
+		mesmax_residuos_renovables = mesmax_residuos_renovables - 12;
+		anomax_residuos_renovables = 2022;
+	}
+
+	if(mesmin_residuos_renovables <=  12)
+    {
+    	anomin_residuos_renovables = 2021;
+	}
+	if((mesmin_residuos_renovables > 12) && (mesmin_residuos_renovables <= 24))
+	{
+		mesmin_residuos_renovables = mesmin_residuos_renovables - 12;
+		anomin_residuos_renovables = 2022;
+	}
+/*
+    printf("El total producido de residuos_renovables en 2 años es: %lf\n", sumatorio_residuos_renovables);
+    printf("La media mensual producida de residuos_renovables en 2 años es: %lf\n", sumatorio_residuos_renovables/24);
+    printf("La media anual producida de residuos_renovables en 2 años es: %lf\n", sumatorio_residuos_renovables/2);
+    printf("El maximo producido de residuos_renovables en 2 años ocurre en %i %i es: %lf\n", mesmax_residuos_renovables, anomax_residuos_renovables, max_residuos_renovables);
+    printf("El minimo producido de residuos_renovables en 2 años ocurre en %i %i es: %lf\n\n", mesmin_residuos_renovables, anomin_residuos_renovables, min_residuos_renovables);
+*/
+
+    double sumatorio_generacion_total = 0, max_generacion_total = valores[0].Generacion_total, min_generacion_total = valores[0].Generacion_total;
+	int mesmax_generacion_total = 0, anomax_generacion_total = 0, mesmin_generacion_total = 0, anomin_generacion_total = 0;
+
+    for(i = 0; i < n; i++)
+    {
+        sumatorio_generacion_total += valores[i].Generacion_total;
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(max_generacion_total <= valores[i].Generacion_total)
+        {
+            max_generacion_total = valores[i].Generacion_total;
+            mesmax_generacion_total = i+1;
+
+        }
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(min_generacion_total >= valores[i].Generacion_total)
+        {
+            min_generacion_total = valores[i].Generacion_total;
+            mesmin_generacion_total = i+1;
+        }
+    }
+
+	if(mesmax_generacion_total <=  12)
+    {
+    	anomax_generacion_total = 2021;
+	}
+	if((mesmax_generacion_total > 12) && (mesmax_generacion_total <= 24))
+	{
+		mesmax_generacion_total = mesmax_generacion_total - 12;
+		anomax_generacion_total = 2022;
+	}
+
+	if(mesmin_generacion_total <=  12)
+    {
+    	anomin_generacion_total = 2021;
+	}
+	if((mesmin_generacion_total > 12) && (mesmin_generacion_total <= 24))
+	{
+		mesmin_generacion_total = mesmin_generacion_total - 12;
+		anomin_generacion_total = 2022;
+	}
+/*
+    printf("El total producido de generacion_total en 2 años es: %lf\n", sumatorio_generacion_total);
+    printf("La media mensual producida de generacion_total en 2 años es: %lf\n", sumatorio_generacion_total/24);
+    printf("La media anual producida de generacion_total en 2 años es: %lf\n", sumatorio_generacion_total/2);
+    printf("El maximo producido de generacion_total en 2 años ocurre en %i %i es: %lf\n", mesmax_generacion_total, anomax_generacion_total, max_generacion_total);
+    printf("El minimo producido de generacion_total en 2 años ocurre en %i %i es: %lf\n\n", mesmin_generacion_total, anomin_generacion_total, min_generacion_total);
+*/
+	double sumatorio_renovable = 0, renovable[n];
+	int mesmax_renovable = 0, anomax_renovable = 0, mesmin_renovable = 0, anomin_renovable = 0;
+
+    for(i = 0; i < n; i++)
+    {
+        renovable[i] = valores[i].Hidraulica + valores[i].Turbinacion_bombeo + valores[i].Nuclear + valores[i].Hidroeolica + valores[i].Eolica + valores[i].Solar_fotovoltaica + valores[i].Solar_termica + valores[i].Otras_renovables;
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        sumatorio_renovable += renovable[i];
+    }
+
+	double max_renovable = renovable[0], min_renovable = renovable[0];
+
+    for(i = 0; i < n; i++)
+    {
+        if(max_renovable <= renovable[i])
+        {
+            max_renovable = renovable[i];
+            mesmax_renovable = i+1;
+        }
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(min_renovable >= renovable[i])
+        {
+            min_renovable = renovable[i];
+            mesmin_renovable = i+1;
+        }
+    }
+
+	if(mesmax_renovable <=  12)
+    {
+    	anomax_renovable = 2021;
+	}
+	if((mesmax_renovable > 12) && (mesmax_renovable <= 24))
+	{
+		mesmax_renovable = mesmax_renovable - 12;
+		anomax_renovable = 2022;
+	}
+
+	if(mesmin_renovable <=  12)
+    {
+    	anomin_renovable = 2021;
+	}
+	if((mesmin_renovable > 12) && (mesmin_renovable <= 24))
+	{
+		mesmin_renovable = mesmin_renovable - 12;
+		anomin_renovable = 2022;
+	}
+/*
+    printf("El total producido de renovable en 2 años es: %lf\n", sumatorio_renovable);
+    printf("La media mensual producida de renovable en 2 años es: %lf\n", sumatorio_renovable/24);
+    printf("La media anual producida de renovable en 2 años es: %lf\n", sumatorio_renovable/2);
+    printf("El maximo producido de renovable en 2 años ocurre en %i %i es: %lf\n", mesmax_renovable, anomax_renovable, max_renovable);
+    printf("El minimo producido de renovable en 2 años ocurre en %i %i es: %lf\n\n", mesmin_renovable, anomin_renovable, min_renovable);
+*/
+
+	double sumatorio_no_renovable = 0, no_renovable[n];
+	int mesmax_no_renovable = 0, anomax_no_renovable = 0, mesmin_no_renovable = 0, anomin_no_renovable = 0;
+
+    for(i = 0; i < n; i++)
+    {
+        no_renovable[i] = valores[i].Carbon + valores[i].Fuel_gas + valores[i].Motores_diesel;
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        sumatorio_no_renovable += no_renovable[i];
+    }
+
+	double max_no_renovable = no_renovable[0], min_no_renovable = renovable[0];
+
+    for(i = 0; i < n; i++)
+    {
+        if(max_no_renovable <= no_renovable[i])
+        {
+            max_no_renovable = no_renovable[i];
+            mesmax_no_renovable = i+1;
+        }
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(min_no_renovable >= no_renovable[i])
+        {
+            min_no_renovable = no_renovable[i];
+            mesmin_no_renovable = i+1;
+        }
+    }
+
+	if(mesmax_no_renovable <=  12)
+    {
+    	anomax_no_renovable = 2021;
+	}
+	if((mesmax_no_renovable > 12) && (mesmax_no_renovable <= 24))
+	{
+		mesmax_no_renovable = mesmax_no_renovable - 12;
+		anomax_no_renovable = 2022;
+	}
+
+	if(mesmin_no_renovable <=  12)
+    {
+    	anomin_no_renovable = 2021;
+	}
+	if((mesmin_no_renovable > 12) && (mesmin_no_renovable <= 24))
+	{
+		mesmin_no_renovable = mesmin_no_renovable - 12;
+		anomin_no_renovable = 2022;
+	}
+/*
+    printf("El total producido de no_renovable en 2 años es: %lf\n", sumatorio_no_renovable);
+    printf("La media mensual producida de no_renovable en 2 años es: %lf\n", sumatorio_no_renovable/24);
+    printf("La media anual producida de no_renovable en 2 años es: %lf\n", sumatorio_no_renovable/2);
+    printf("El maximo producido de no_renovable en 2 años ocurre en %i %i es: %lf\n", mesmax_no_renovable, anomax_no_renovable, max_no_renovable);
+    printf("El minimo producido de no_renovable en 2 años ocurre en %i %i es: %lf\n\n", mesmin_no_renovable, anomin_no_renovable, min_no_renovable);
+*/
+
+	double sumatorio_mezcla = 0, mezcla[n];
+	int mesmax_mezcla = 0, anomax_mezcla = 0, mesmin_mezcla = 0, anomin_mezcla = 0;
+
+    for(i = 0; i < n; i++)
+    {
+        mezcla[i] = valores[i].Turbina_gas + valores[i].Turbina_vapor + valores[i].Ciclo_combinado + valores[i].Cogeneracion;
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        sumatorio_mezcla += mezcla[i];
+    }
+
+	double max_mezcla = mezcla[0], min_mezcla = mezcla[0];
+
+    for(i = 0; i < n; i++)
+    {
+        if(max_mezcla <= mezcla[i])
+        {
+            max_mezcla = mezcla[i];
+            mesmax_mezcla = i+1;
+        }
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(min_mezcla >= mezcla[i])
+        {
+            min_mezcla = mezcla[i];
+            mesmin_mezcla = i+1;
+
+        }
+    }
+
+	if(mesmax_mezcla <=  12)
+    {
+    	anomax_mezcla = 2021;
+	}
+	if((mesmax_mezcla > 12) && (mesmax_mezcla <= 24))
+	{
+		mesmax_mezcla = mesmax_mezcla - 12;
+		anomax_mezcla = 2022;
+	}
+
+	if(mesmin_mezcla <=  12)
+    {
+    	anomin_mezcla = 2021;
+	}
+	if((mesmin_mezcla > 12) && (mesmin_mezcla <= 24))
+	{
+		mesmin_mezcla = mesmin_mezcla - 12;
+		anomin_mezcla = 2022;
+	}
+/*
+    printf("El total producido de mezcla en 2 años es: %lf\n", sumatorio_mezcla);
+    printf("La media mensual producida de mezcla en 2 años es: %lf\n", sumatorio_mezcla/24);
+    printf("La media anual producida de mezcla en 2 años es: %lf\n", sumatorio_mezcla/2);
+    printf("El maximo producido de mezcla en 2 años ocurre en %i %i es: %lf\n", mesmax_mezcla, anomax_mezcla, max_mezcla);
+    printf("El minimo producido de mezcla en 2 años ocurre en %i %i es: %lf\n\n", mesmin_mezcla, anomin_mezcla, min_mezcla);
+*/
+
+
+
+	double sumatorio_residuos = 0, residuos[n];
+	int mesmax_residuos = 0, anomax_residuos = 0, mesmin_residuos = 0, anomin_residuos = 0;
+
+    for(i = 0; i < n; i++)
+    {
+        residuos[i] = valores[i].Residuos_no_renovables + valores[i].Residuos_renovables;
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        sumatorio_residuos += residuos[i];
+    }
+
+	double max_residuos = residuos[0], min_residuos = residuos[0];
+
+    for(i = 0; i < n; i++)
+    {
+        if(max_residuos <= residuos[i])
+        {
+            max_residuos = residuos[i];
+            mesmax_residuos = i+1;
+        }
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(min_residuos >= residuos[i])
+        {
+            min_residuos = residuos[i];
+            mesmin_residuos = i+1;
+
+        }
+    }
+
+	if(mesmax_residuos <=  12)
+    {
+    	anomax_residuos = 2021;
+	}
+	if((mesmax_residuos > 12) && (mesmax_residuos <= 24))
+	{
+		mesmax_residuos = mesmax_residuos - 12;
+		anomax_residuos = 2022;
+	}
+
+	if(mesmin_residuos <=  12)
+    {
+    	anomin_residuos = 2021;
+	}
+	if((mesmin_residuos > 12) && (mesmin_residuos <= 24))
+	{
+		mesmin_residuos = mesmin_residuos - 12;
+		anomin_residuos = 2022;
+	}
+/*
+    printf("El total producido de residuos en 2 años es: %lf\n", sumatorio_residuos);
+    printf("La media mensual producida de residuos en 2 años es: %lf\n", sumatorio_residuos/24);
+    printf("La media anual producida de residuos en 2 años es: %lf\n", sumatorio_residuos/2);
+    printf("El maximo producido de residuos en 2 años ocurre en %i %i es: %lf\n", mesmax_residuos, anomax_residuos, max_residuos);
+    printf("El minimo producido de residuos en 2 años ocurre en %i %i es: %lf\n\n", mesmin_residuos, anomin_residuos, min_residuos);
+*/
+
 	
  
 
