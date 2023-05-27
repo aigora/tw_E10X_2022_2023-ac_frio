@@ -230,35 +230,49 @@ void menu_secundario(int *seleccion)
 
 int comprobar_existencia_fichero()  //comprueba el fichero y guarda los datos en vectores
 {
-    FILE *pf;
+    FILE *fOrigen, *fDestino;
+    char c;
 
- 
-
-    pf = fopen("generacion_por_tecnologias_21_22.csv", "r");
-
- 
-
-    if (pf == NULL)
+  // Abre ficheros:
+  // El origen en modo lectura:
+    fOrigen = fopen("generacion_por_tecnologias_21_22.csv", "r");
+    if (fOrigen == NULL)
     {
-        printf("Error al abrir el fichero.\n");
+        printf("Error al abrir el archivo origen.\n");
         return -1;
     }
     else
     {
-        printf("Fichero abierto correctamente.\n");
-
- 
-
-        //leer datos fichero y guardarlo en vectores
-
- 
-
- 
-
-
-        return 0;
+    // El destino en modo escritura:
+        fDestino = fopen("generacion.txt", "w");
+        if (fDestino == NULL)
+        {
+            printf("Error al abrir el archivo destino.\n");
+            return -1;
+        }
+        else
+        { // Los dos ficheros están correctamente abiertos
+      // Leemos el origen caracter por caracter, parando al encontrar
+      // el EOF
+            while (fscanf(fOrigen, "%c", &c) != EOF)
+            {
+                if (c == '"')
+                {
+                    c = ' '; // Cambiamos comillas por espacios
+                }
+                else if(c == ',')
+                {
+                    c = '.';
+                }
+                fprintf(fDestino, "%c", c); // Escribimos el caracter en el destino
+            }
+      // Cerramos ficheros
+      fclose(fOrigen);
+      fclose(fDestino);
+      printf("Copia finalizada con exito.\n");
+      
     }
-    fclose(pf);
+  }
 }
 
  
