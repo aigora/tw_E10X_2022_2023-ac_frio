@@ -1,42 +1,36 @@
 //////////////// Libreria con el codigo de las funciones
 
- 
 
- 
 
- 
+
 
 #include <stdio.h>
+#include <string.h>
+#include <locale.h>
 #include "libreria de funciones.h"
 
- 
-
- 
 
 
-void menu_principal(int *opcion)
+
+void menu_principal(int *opcion)  // Función menu principal con system cls
 {
-    //system("cls");  //Borrar pantalla o no, para poder mirar cuando se quiera las instruciones
+	printf("\nBienvenido al programa de analisis de datos \n\n");
 
- 
+	printf("Que desea realizar:\n\n");
 
-    printf("\nBienvenido al programa de analisis de datos \n\n");
+	printf("Informacion sobre programa     1\n");
+	printf("Cargar fichero de datos        2\n");
+	printf("Salir                          3\n");
 
- 
+	printf("\n");
 
-    printf("Que desea realizar:\n\n");
+	scanf("%i", &*opcion);
 
- 
+	system("cls");
 
-    printf("informacionn sobre programa    1\n");
-    printf("cargar fichero de datos        2\n");
-    printf("salir                          3\n");
+	printf("\n");
+} // Actualizacion
 
- 
-
-    //fflush(stdin);
-    scanf("%i", &*opcion);
-}
 
  
 
