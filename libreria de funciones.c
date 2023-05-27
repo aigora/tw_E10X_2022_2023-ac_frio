@@ -1851,25 +1851,106 @@ void diversos_calculos(datos valores[], int n)
         }
     }
     while(chose != 23);
-}
-	
- 
 
 }
 
  
 
-int crear_nuevo_fichero()
+void cargar_resultados(datos valores[], int n)
 {
+        int i;
+		
+        //IMPRESION POR PANTALLA
 
- 
+		printf("Valores dados en Gwh:\n\n");
 
-}
+		printf("Fecha\n");
 
- 
+        for(i = 0; i < 24; i++)
+        {
+            printf("%i/%i ", valores[i].mes, valores[i].ano);
+        }
 
-void diversos_calculos()
-{
+        printf("\n\n");
+
+        printf("Hidraulica\n");
+
+        for(i = 0; i < 24; i++)
+        {
+            printf("%lf ", valores[i].Hidraulica);
+        }
+
+        printf("\n\n");
+
+        printf("Turbinacion bombeo\n");
+
+        for(i = 0; i < 24; i++)
+        {
+            printf("%lf ", valores[i].Turbinacion_bombeo);
+        }
+
+        printf("\n\n");
+
+        printf("Nuclear\n");
+
+        for(i = 0; i < 24; i++)
+        {
+            printf("%lf ", valores[i].Nuclear);
+        }
+
+        printf("\n\n");
+
+        printf("Carbon\n");
+
+        for(i = 0; i < 24; i++)
+        {
+            printf("%lf ", valores[i].Carbon);
+        }
+
+        printf("\n\n");
+
+        printf("Fuel Gas\n");
+
+        for(i = 0; i < 6; i++)
+        {
+            printf("%c ", valores[i].Fuel_gasc);
+        }
+
+        printf("%lf ", valores[6].Fuel_gas);
+
+        for(i = 7; i < 24; i++)
+        {
+            printf("%c ", valores[i].Fuel_gasc);
+        }
+
+        printf("\n\n");
+
+        printf("Motores diesel\n");
+
+        for(i = 0; i < 24; i++)
+        {
+            printf("%lf ", valores[i].Motores_diesel);
+        }
+
+        printf("\n\n");
+
+        printf("Turbina de gas\n");
+
+        for(i = 0; i < 24; i++)
+        {
+            printf("%lf ", valores[i].Turbina_gas);
+        }
+
+        printf("\n\n");
+
+        printf("Turbina de vapor\n");
+
+        for(i = 0; i < 24; i++)
+        {
+            printf("%lf ", valores[i].Turbina_vapor);
+        }
+
+        printf("\n\n");
 
  
 
