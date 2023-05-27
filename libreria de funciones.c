@@ -84,99 +84,53 @@ void informacion(int *info)
  
 
 
-void menu_secundario(int *seleccion)
+void menu_secundario(int *seleccion, datos valores[])
 {
-    printf("que operacion desea realizar\n\n");
+    printf("Que operacion desea realizar\n\n");
 
- 
+	do
+	{
+		printf("Diversos calculos       1\n");
+		printf("Busqueda de datos       2\n");
+		printf("Carga resultados        3\n");
+		printf("Salir                   4\n");
 
-    do
-    {
-        printf("diversos calculos       1\n");
-        printf("carga de nuevos datos   2\n");
-        printf("guardar resultados      3\n");
-        printf("busqueda de datos       4\n");
-        printf("ordenar resultados      5\n");
-        printf("salir                   6\n");
+		printf("\n");
 
- 
+		scanf("%i", &*seleccion);
+		
+		printf("\n");
 
-        //fflush(stdin);
+		system("cls");
 
- 
-
-        scanf("%i", &*seleccion);
-
- 
-
-        switch (*seleccion)
-        {
+		switch (*seleccion)
+		{
             case 1:
+                diversos_calculos(valores, 24);
                 printf("\n");
-
- 
-
                 break;
-
- 
 
             case 2:
+                busqueda_resultados(valores, 24);
                 printf("\n");
-
- 
-
                 break;
-
- 
 
             case 3:
+                cargar_resultados(valores, 24);
                 printf("\n");
-
- 
-
                 break;
-
- 
 
             case 4:
-                printf("\n");
-
- 
-
+                printf("Saliendo\n");
                 break;
-
- 
-
-            case 5:
-                printf("\n");
-
- 
-
-                break;
-
- 
-
-            case 6:
-                printf("saliendo\n");
-                break;
-
- 
 
             default:
-               printf("opcion no disponible\n");
+               printf("Opcion no disponible\n");
                break;
-        }
-    }
-
- 
-
-    while(*seleccion != 6);
-
- 
-
-    system("PAUSE");
+		}
+	}
+	while(*seleccion != 4);
 }
-
  
 
 
@@ -2042,3 +1996,147 @@ void cargar_resultados(datos valores[], int n)
 
         printf("\n\n");
 }
+
+
+void busqueda_resultados(datos valores[], int n)
+{
+    int i;
+
+    int tipo, mes, year;
+
+    do
+    {
+        printf("Introduce un mes y un año desde el 1/2021 al 12/2022 de la forma XX(mes) XXXX(año)\n");
+
+        printf("Si desea salir introduce 00 0000\n");
+
+        printf("\n");
+
+        scanf("%i %i", &mes, &year);
+
+        for(i = 0; i < 24; i++)
+        {
+            if((valores[i].mes == mes) && (valores[i].ano == year))
+            {
+                do
+                {
+                    printf("\nElige tipo de energia\n\n");
+
+                    printf("1-Hidraulica\t\t2-Turbinacion bombeo\n");
+
+                    printf("3-Nuclear\t\t4-Carbon\n");
+
+                    printf("5-Fuel gas\t\t6-Motores diesel\n");
+
+                    printf("7-Turbina gas\t\t8-Turbina vapor\n");
+
+                    printf("9-Ciclo combinado\t10-Hidroeolica\n");
+
+                    printf("11-Eolica\t\t2-Solar fotovoltaica\n");
+
+                    printf("13-Solar termica\t14-Otras renovables\n");
+
+                    printf("15-Cogeneracion\t\t16-Residuos no renovables\n");
+
+                    printf("17-Residuos renovables\t18-Generacion total\n");
+
+                    printf("19-Salir\n\n");
+
+                    scanf("%i", &tipo);
+
+                    printf("\n");
+                    
+                    system("cls");
+
+                    switch(tipo)
+                    {
+                        case 1:
+                            printf("La cantidad de energia que se genero fue de %lf GWh\n", valores[i].Hidraulica);
+                            break;
+
+                        case 2:
+                            printf("La cantidad de energia que se genero fue de %lf GWh\n", valores[i].Turbinacion_bombeo);
+                            break;
+
+                        case 3:
+                            printf("La cantidad de energia que se genero fue de %lf GWh\n", valores[i].Nuclear);
+                            break;
+
+                        case 4:
+                            printf("La cantidad de energia que se genero fue de %lf GWh\n", valores[i].Carbon);
+                            break;
+
+                        case 5:
+                            printf("La cantidad de energia que se genero fue de %lf GWh\n", valores[i].Fuel_gas);
+                            break;
+
+                        case 6:
+                            printf("La cantidad de energia que se genero fue de %lf GWh\n", valores[i].Motores_diesel);
+                            break;
+
+                        case 7:
+                            printf("La cantidad de energia que se genero fue de %lf GWh\n", valores[i].Turbina_gas);
+                            break;
+
+                        case 8:
+                            printf("La cantidad de energia que se genero fue de %lf GWh\n", valores[i].Turbina_vapor);
+                            break;
+
+                        case 9:
+                            printf("La cantidad de energia que se genero fue de %lf GWh\n", valores[i].Ciclo_combinado);
+                            break;
+
+                        case 10:
+                            printf("La cantidad de energia que se genero fue de %lf GWh\n", valores[i].Hidroeolica);
+                            break;
+
+                        case 11:
+                            printf("La cantidad de energia que se genero fue de %lf GWh\n", valores[i].Eolica);
+                            break;
+
+                        case 12:
+                            printf("La cantidad de energia que se genero fue de %lf GWh\n", valores[i].Solar_fotovoltaica);
+                            break;
+
+                        case 13:
+                            printf("La cantidad de energia que se genero fue de %lf GWh\n", valores[i].Solar_termica);
+                            break;
+
+                        case 14:
+                            printf("La cantidad de energia que se genero fue de %lf GWh\n", valores[i].Otras_renovables);
+                            break;
+
+                        case 15:
+                            printf("La cantidad de energia que se genero fue de %lf GWh\n", valores[i].Cogeneracion);
+                            break;
+
+                        case 16:
+                            printf("La cantidad de energia que se genero fue de %lf GWh\n", valores[i].Residuos_no_renovables);
+                            break;
+
+                        case 17:
+                            printf("La cantidad de energia que se genero fue de %lf GWh\n", valores[i].Residuos_renovables);
+                            break;
+
+                        case 18:
+                            printf("La cantidad total que se genero fue de %lf GWh\n", valores[i].Generacion_total);
+                            break;
+
+                        case 19:
+                            printf("Saliendo\n");
+                            break;
+
+                        default:
+                            printf("Opcion no disponible\n");
+                            break;
+                    }
+                }
+                while(tipo != 19);
+            }
+        }
+    }
+    while((mes != 00) && (year != 0000));
+    
+    system("cls");
+}
+
