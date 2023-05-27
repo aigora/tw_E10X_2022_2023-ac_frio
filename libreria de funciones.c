@@ -431,8 +431,377 @@ int apertura_lectura_guardardatos(datos valores[], int n)  //comprueba el ficher
 
  
 
-void cargar_fichero()
+void diversos_calculos(datos valores[], int n)
 {
+    int i;
+
+    int chose;
+
+    double sumatorio_hidraulica = 0, max_hidraulica= valores[0].Hidraulica, min_hidraulica= valores[0].Hidraulica;
+	int mesmax_hidraulica = 0, anomax_hidraulica = 0, mesmin_hidraulica = 0, anomin_hidraulica = 0;
+
+    for(i = 0; i < n; i++)
+    {
+        sumatorio_hidraulica += valores[i].Hidraulica;
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(max_hidraulica <= valores[i].Hidraulica)
+        {
+            max_hidraulica = valores[i].Hidraulica;
+            mesmax_hidraulica = i+1;
+        }
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(min_hidraulica >= valores[i].Hidraulica)
+        {
+            min_hidraulica = valores[i].Hidraulica;
+            mesmin_hidraulica = i+1;
+        }
+    }
+
+	if(mesmax_hidraulica <=  12)
+    {
+    	anomax_hidraulica = 2021;
+	}
+	if((mesmax_hidraulica > 12) && (mesmax_hidraulica <= 24))
+	{
+		mesmax_hidraulica = mesmax_hidraulica - 12;
+		anomax_hidraulica = 2022;
+	}
+
+	if(mesmin_hidraulica <=  12)
+    {
+    	anomin_hidraulica = 2021;
+	}
+	if((mesmin_hidraulica > 12) && (mesmin_hidraulica <= 24))
+	{
+		mesmin_hidraulica = mesmin_hidraulica - 12;
+		anomin_hidraulica = 2022;
+	}
+/*
+    printf("El total producido de hidraulica en 2 años es: %lf\n", sumatorio_hidraulica);
+    printf("La media mensual producida de hidraulica en 2 años es: %lf\n", sumatorio_hidraulica/24);
+    printf("La media anual producida de hidraulica en 2 años es: %lf\n", sumatorio_hidraulica/2);
+    printf("El maximo producido de hidraulica en 2 años ocurre en %i %i es: %lf\n", mesmax_hidraulica, anomax_hidraulica, max_hidraulica);
+    printf("El minimo producido de hidraulica en 2 años ocurre en %i %i es: %lf\n\n", mesmin_hidraulica, anomin_hidraulica, min_hidraulica);
+*/
+
+    double sumatorio_turbinacion_bombeo = 0, max_turbinacion_bombeo = valores[0].Turbinacion_bombeo, min_turbinacion_bombeo = valores[0].Turbinacion_bombeo;
+	int mesmax_turbinacion_bombeo = 0, anomax_turbinacion_bombeo = 0, mesmin_turbinacion_bombeo = 0, anomin_turbinacion_bombeo = 0;
+    for(i = 0; i < n; i++)
+    {
+        sumatorio_turbinacion_bombeo += valores[i].Turbinacion_bombeo;
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(max_turbinacion_bombeo <= valores[i].Turbinacion_bombeo)
+        {
+            max_turbinacion_bombeo = valores[i].Turbinacion_bombeo;
+            mesmax_turbinacion_bombeo = i+1;
+        }
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(min_turbinacion_bombeo >= valores[i].Turbinacion_bombeo)
+        {
+            min_turbinacion_bombeo = valores[i].Turbinacion_bombeo;
+            mesmin_turbinacion_bombeo = i+1;
+        }
+    }
+
+	if(mesmax_turbinacion_bombeo <=  12)
+    {
+    	anomax_turbinacion_bombeo = 2021;
+	}
+	if((mesmax_turbinacion_bombeo > 12) && (mesmax_turbinacion_bombeo <= 24))
+	{
+		mesmax_turbinacion_bombeo = mesmax_turbinacion_bombeo - 12;
+		anomax_turbinacion_bombeo = 2022;
+	}
+
+	if(mesmin_turbinacion_bombeo <=  12)
+    {
+    	anomin_turbinacion_bombeo = 2021;
+	}
+	if((mesmin_turbinacion_bombeo > 12) && (mesmin_turbinacion_bombeo <= 24))
+	{
+		mesmin_turbinacion_bombeo = mesmin_turbinacion_bombeo - 12;
+		anomin_turbinacion_bombeo = 2022;
+	}
+/*
+    printf("El total producido de turbinacion_bombeo en 2 años es: %lf\n", sumatorio_turbinacion_bombeo);
+    printf("La media mensual producida de turbinacion_bombeo en 2 años es: %lf\n", sumatorio_turbinacion_bombeo/24);
+    printf("La media anual producida de turbinacion_bombeo en 2 años es: %lf\n", sumatorio_turbinacion_bombeo/2);
+    printf("El maximo producido de turbinacion_bombeo en 2 años ocurre en %i %i es: %lf\n", mesmax_turbinacion_bombeo, anomax_turbinacion_bombeo, max_turbinacion_bombeo);
+    printf("El minimo producido de turbinacion_bombeo en 2 años ocurre en %i %i es: %lf\n\n", mesmin_turbinacion_bombeo, anomin_turbinacion_bombeo, min_turbinacion_bombeo);
+*/
+
+    double sumatorio_nuclear = 0, max_nuclear = valores[0].Nuclear, min_nuclear = valores[0].Nuclear;
+	int mesmax_nuclear = 0, anomax_nuclear = 0, mesmin_nuclear = 0, anomin_nuclear = 0;
+    for(i = 0; i < n; i++)
+    {
+        sumatorio_nuclear += valores[i].Nuclear;
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(max_nuclear <= valores[i].Nuclear)
+        {
+            max_nuclear = valores[i].Nuclear;
+            mesmax_nuclear = i+1;
+        }
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(min_nuclear >= valores[i].Nuclear)
+        {
+            min_nuclear = valores[i].Nuclear;
+            mesmin_nuclear = i+1;
+        }
+    }
+
+	if(mesmax_nuclear <=  12)
+    {
+    	anomax_nuclear = 2021;
+	}
+	if((mesmax_nuclear > 12) && (mesmax_nuclear <= 24))
+	{
+		mesmax_nuclear = mesmax_nuclear - 12;
+		anomax_nuclear = 2022;
+	}
+
+	if(mesmin_nuclear <=  12)
+    {
+    	anomin_nuclear = 2021;
+	}
+	if((mesmin_nuclear > 12) && (mesmin_nuclear <= 24))
+	{
+		mesmin_nuclear = mesmin_nuclear - 12;
+		anomin_nuclear = 2022;
+	}
+/*
+    printf("El total producido de nuclear en 2 años es: %lf\n", sumatorio_nuclear);
+    printf("La media mensual producida de nuclear en 2 años es: %lf\n", sumatorio_nuclear/24);
+    printf("La media anual producida de nuclear en 2 años es: %lf\n", sumatorio_nuclear/2);
+    printf("El maximo producido de nuclear en 2 años ocurre en %i %i es: %lf\n", mesmax_nuclear, anomax_nuclear, max_nuclear);
+    printf("El minimo producido de nuclear en 2 años ocurre en %i %i es: %lf\n\n", mesmin_nuclear, anomin_nuclear, min_nuclear);
+*/
+
+    double sumatorio_carbon = 0, max_carbon = valores[0].Carbon, min_carbon = valores[0].Carbon;
+	int mesmax_carbon = 0, anomax_carbon = 0, mesmin_carbon = 0, anomin_carbon = 0;
+
+    for(i = 0; i < n; i++)
+    {
+        sumatorio_carbon += valores[i].Carbon;
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(max_carbon <= valores[i].Carbon)
+        {
+            max_carbon = valores[i].Carbon;
+            mesmax_carbon = i+1;
+        }
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(min_carbon >= valores[i].Carbon)
+        {
+            min_carbon = valores[i].Carbon;
+            mesmin_carbon = i+1;
+        }
+    }
+
+	if(mesmax_carbon <=  12)
+    {
+    	anomax_carbon = 2021;
+	}
+	if((mesmax_carbon > 12) && (mesmax_carbon <= 24))
+	{
+		mesmax_carbon = mesmax_carbon - 12;
+		anomax_carbon = 2022;
+	}
+
+	if(mesmin_carbon <=  12)
+    {
+    	anomin_carbon = 2021;
+	}
+	if((mesmin_carbon > 12) && (mesmin_carbon <= 24))
+	{
+		mesmin_carbon = mesmin_carbon - 12;
+		anomin_carbon = 2022;
+	}
+/*
+    printf("El total producido de carbon en 2 años es: %lf\n", sumatorio_carbon);
+    printf("La media mensual producida de carbon en 2 años es: %lf\n", sumatorio_carbon/24);
+    printf("La media anual producida de carbon en 2 años es: %lf\n", sumatorio_carbon/2);
+    printf("El maximo producido de carbon en 2 años ocurre en %i %i es: %lf\n", mesmax_carbon, anomax_carbon, max_carbon);
+    printf("El minimo producido de carbon en 2 años ocurre en %i %i es: %lf\n\n", mesmin_carbon, anomin_carbon, min_carbon);
+*/
+
+    double sumatorio_fuel_Gas = 0, max_fuel_Gas = valores[0].Fuel_gas, min_fuel_Gas = valores[0].Fuel_gas;
+	int mesmax_fuel_Gas = 0, anomax_fuel_Gas = 0, mesmin_fuel_Gas = 0, anomin_fuel_Gas = 0;
+    for(i = 0; i < n; i++)
+    {
+        sumatorio_fuel_Gas += valores[i].Fuel_gas;
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(max_fuel_Gas <= valores[i].Fuel_gas)
+        {
+            max_fuel_Gas = valores[i].Fuel_gas;
+            mesmax_fuel_Gas = i+1;
+        }
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(min_fuel_Gas >= valores[i].Fuel_gas)
+        {
+            min_fuel_Gas = valores[i].Fuel_gas;
+            mesmin_fuel_Gas = i+1;
+        }
+    }
+
+	if(mesmax_fuel_Gas <=  12)
+    {
+    	anomax_fuel_Gas = 2021;
+	}
+	if((mesmax_fuel_Gas > 12) && (mesmax_fuel_Gas <= 24))
+	{
+		mesmax_fuel_Gas = mesmax_fuel_Gas - 12;
+		anomax_fuel_Gas = 2022;
+	}
+
+	if(mesmin_fuel_Gas <=  12)
+    {
+    	anomin_fuel_Gas = 2021;
+	}
+	if((mesmin_fuel_Gas > 12) && (mesmin_fuel_Gas <= 24))
+	{
+		mesmin_fuel_Gas = mesmin_fuel_Gas - 12;
+		anomin_fuel_Gas = 2022;
+	}
+/*
+    printf("El total producido de fuel_Gas en 2 años es: %lf\n", sumatorio_fuel_Gas);
+    printf("La media mensual producida de fuel_Gas en 2 años es: %lf\n", sumatorio_fuel_Gas/24);
+    printf("La media anual producida de fuel_Gas en 2 años es: %lf\n", sumatorio_fuel_Gas/2);
+    printf("El maximo producido de fuel_Gas en 2 años ocurre en %i %i es: %lf\n", mesmax_fuel_Gas, anomax_fuel_Gas, max_fuel_Gas);
+    printf("El minimo producido de fuel_Gas en 2 años ocurre en %i %i es: %lf\n\n", mesmin_fuel_Gas, anomin_fuel_Gas, min_fuel_Gas);
+*/
+
+    double sumatorio_motores_diesel = 0, max_motores_diesel = valores[0].Motores_diesel, min_motores_diesel = valores[0].Motores_diesel;
+	int mesmax_motores_diesel = 0, anomax_motores_diesel = 0, mesmin_motores_diesel = 0, anomin_motores_diesel = 0;
+    for(i = 0; i < n; i++)
+    {
+        sumatorio_motores_diesel += valores[i].Motores_diesel;
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(max_motores_diesel <= valores[i].Motores_diesel)
+        {
+            max_motores_diesel = valores[i].Motores_diesel;
+            mesmax_motores_diesel = i+1;
+        }
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(min_motores_diesel >= valores[i].Motores_diesel)
+        {
+            min_motores_diesel = valores[i].Motores_diesel;
+            mesmin_motores_diesel = i+1;
+        }
+    }
+
+	if(mesmax_motores_diesel <=  12)
+    {
+    	anomax_motores_diesel = 2021;
+	}
+	if((mesmax_motores_diesel > 12) && (mesmax_motores_diesel <= 24))
+	{
+		mesmax_motores_diesel = mesmax_motores_diesel - 12;
+		anomax_motores_diesel = 2022;
+	}
+
+	if(mesmin_motores_diesel <=  12)
+    {
+    	anomin_motores_diesel = 2021;
+	}
+	if((mesmin_motores_diesel > 12) && (mesmin_motores_diesel <= 24))
+	{
+		mesmin_motores_diesel = mesmin_motores_diesel - 12;
+		anomin_motores_diesel = 2022;
+	}
+/*
+    printf("El total producido de motores_diesel en 2 años es: %lf\n", sumatorio_motores_diesel);
+    printf("La media mensual producida de motores_diesel en 2 años es: %lf\n", sumatorio_motores_diesel/24);
+    printf("La media anual producida de motores_diesel en 2 años es: %lf\n", sumatorio_motores_diesel/2);
+    printf("El maximo producido de motores_diesel en 2 años ocurre en %i %i es: %lf\n", mesmax_motores_diesel, anomax_motores_diesel, max_motores_diesel);
+    printf("El minimo producido de motores_diesel en 2 años ocurre en %i %i es: %lf\n\n", mesmin_motores_diesel, anomin_motores_diesel, min_motores_diesel);
+*/
+
+    double sumatorio_turbina_de_gas = 0, max_turbina_de_gas = valores[0].Turbina_gas, min_turbina_de_gas = valores[0].Turbina_gas;
+	int mesmax_turbina_de_gas = 0, anomax_turbina_de_gas = 0, mesmin_turbina_de_gas = 0, anomin_turbina_de_gas = 0;
+    for(i = 0; i < n; i++)
+    {
+        sumatorio_turbina_de_gas += valores[i].Turbina_gas;
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(max_turbina_de_gas <= valores[i].Turbina_gas)
+        {
+            max_turbina_de_gas = valores[i].Turbina_gas;
+            mesmax_turbina_de_gas = i+1;
+        }
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(min_turbina_de_gas >= valores[i].Turbina_gas)
+        {
+            min_turbina_de_gas = valores[i].Turbina_gas;
+            mesmin_turbina_de_gas = i+1;
+        }
+    }
+
+	if(mesmax_turbina_de_gas <=  12)
+    {
+    	anomax_turbina_de_gas = 2021;
+	}
+	if((mesmax_turbina_de_gas > 12) && (mesmax_turbina_de_gas <= 24))
+	{
+		mesmax_turbina_de_gas = mesmax_turbina_de_gas - 12;
+		anomax_turbina_de_gas = 2022;
+	}
+
+	if(mesmin_turbina_de_gas <=  12)
+    {
+    	anomin_turbina_de_gas = 2021;
+	}
+	if((mesmin_turbina_de_gas > 12) && (mesmin_turbina_de_gas <= 24))
+	{
+		mesmin_turbina_de_gas = mesmin_turbina_de_gas - 12;
+		anomin_turbina_de_gas = 2022;
+	}
+/*
+    printf("El total producido de turbina_de_gas en 2 años es: %lf\n", sumatorio_turbina_de_gas);
+    printf("La media mensual producida de turbina_de_gas en 2 años es: %lf\n", sumatorio_turbina_de_gas/24);
+    printf("La media anual producida de turbina_de_gas en 2 años es: %lf\n", sumatorio_turbina_de_gas/2);
+    printf("El maximo producido de turbina_de_gas en 2 años ocurre en %i %i es: %lf\n", mesmax_turbina_de_gas, anomax_turbina_de_gas, max_turbina_de_gas);
+    printf("El minimo producido de turbina_de_gas en 2 años ocurre en %i %i es: %lf\n\n", mesmin_turbina_de_gas, anomin_turbina_de_gas, min_turbina_de_gas);
+*/
 
  
 
