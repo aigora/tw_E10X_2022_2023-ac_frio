@@ -1654,7 +1654,7 @@ void diversos_calculos(datos valores[], int n)
                 printf("El total producido de fuel Gas en 2 años es: %lf GWh\n", sumatorio_fuel_Gas);
     			printf("La media mensual producida de fuel Gas en 2 años es: %lf GWh\n", sumatorio_fuel_Gas/24);
   			 	printf("La media anual producida de fuel Gas en 2 años es: %lf GWh\n", sumatorio_fuel_Gas/2);
-    			printf("El maximo producido de fuel Gas en 2 años ocurre el mes %i de %i con: %lf GWh\n", mesmax_fuel_Gas, anomax_fuel_Gas, max_fuel_Gas);
+    			printf("No hay ningun maximo correspondido a esta fuente de energia debido a que no produce en positivo.\n",);
     			printf("El minimo producido de fuel Gas en 2 años ocurre el mes %i de %i con: %lf GWh\n\n", mesmin_fuel_Gas, anomin_fuel_Gas, min_fuel_Gas);
                 break;
 
